@@ -1,0 +1,62 @@
+//Teste de requisição - categorias
+@baseURL=http://localhost:4000
+
+@id=
+
+@nome=
+
+###
+//GET - lista as categorias
+GET {{baseURL}}/items
+Content-Type: application/json
+
+###
+//GET - lista a categoria pelo nome
+GET {{baseURL}}/items/{{nome}}
+Content-Type: application/json
+
+###
+//Post - inclue um novo item
+POST {{baseURL}}/items
+Content-Type: application/json
+
+{
+    "nome": "tenis incrivel",
+    "categoria": "60ad08e748e9e2048d20c1c2", 
+    "quantidade": "5",
+    "status": "disponivel",
+    "foto":{
+        "originalname": "tenis",
+        "path": "/public/upload/tenis.jpg",
+        "size": "240",
+        "mimeType": "tenis/jpg",
+    },
+    "nota": "4",
+    "preco": "53",
+}
+
+###
+//DELETE apaga um item
+DELETE {{baseURL}}/items/{{nome}}
+Content-Type: application/json
+
+###
+//PUT altera um item
+PUT {{baseURL}}/items
+Content-Type: application/json
+
+{
+    "_id":"",
+    "nome": "",
+    "catagoria": "", 
+    "quantidade": "",
+    "status": "",
+    "foto": {
+        "originalname": "",
+        "path": "",
+        "size": "",
+        "mimeType": "",
+    },
+    "nota": "",
+    "preço": "",
+}

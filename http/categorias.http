@@ -1,0 +1,39 @@
+//Teste de requisição - categorias
+@baseURL=http://localhost:4000
+
+//@id=60ad066f08a8060421267369
+
+@nome=tenis
+
+###
+//GET - lista as categorias
+GET {{baseURL}}/categorias
+Content-Type: application/json
+
+###
+//GET - lista a categoria pelo nome
+GET {{baseURL}}/categorias/{{nome}}
+Content-Type: application/json
+
+###
+//Post - inclue uma nova categoria
+POST {{baseURL}}/categorias
+Content-Type: application/json
+
+{"nome":"camisa", "status":"ativo"}
+
+###
+//DELETE apaga uma categoria
+DELETE {{baseURL}}/categorias/{{nome}}
+Content-Type: application/json
+
+###
+//PUT altera uma categoria
+PUT {{baseURL}}/categorias
+Content-Type: application/json
+
+{
+    "_id":"",
+    "nome":"",
+    "status":""
+}
