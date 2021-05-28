@@ -22,13 +22,13 @@ router.get('/', async (req, res) => {
 
 /*******************
  Lista uma categoria pelo nome
- get /categorias/nome
+ get /categorias/:nome
  *******************/
 
-router.get('/:nome', async (req, res) => {
+ router.get('/:nome', async (req, res) => {
     try {
-        const { nome } = req.body
-        const categorias = await Categoria.findOne(nome)
+        /**Não funciona */
+        const categorias = await Categoria.findOne(req.params.nome)
         res.json(categorias)
     } catch (err) {
         res.status(500).send({
@@ -78,7 +78,8 @@ router.post('/', async (req, res) => {
  *********/
 
 router.delete('/:nome', async (req, res) => {
-    await Categoria.findOneAndRemove(req.params.nome)
+
+    await Categoria.findOneAndDelete(req.params.nome)
         .then(categoria => {
             res.send(
                 { message: `Categoria ${categoria.nome} removida com sucesso` }
@@ -92,10 +93,10 @@ router.delete('/:nome', async (req, res) => {
         })
 })
 
-/**
+/*********
  * PUT /categorias
  * altera os dados da categoria informada
- */
+ **********/
 router.put('/', validaCategoria,
     async (req, res) => {
         //verifica se existe algum erro

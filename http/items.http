@@ -1,17 +1,17 @@
 //Teste de requisição - categorias
 @baseURL=http://localhost:4000
 
-@id=
+@id=60b0ef4c72075c00fef63001
 
-@nome=
+@nome=salto
 
 ###
-//GET - lista as categorias
+//GET - lista os items
 GET {{baseURL}}/items
 Content-Type: application/json
 
 ###
-//GET - lista a categoria pelo nome
+//GET - lista os items pelo nome
 GET {{baseURL}}/items/{{nome}}
 Content-Type: application/json
 
@@ -21,7 +21,7 @@ POST {{baseURL}}/items
 Content-Type: application/json
 
 {
-    "nome": "tenis incrivel",
+    "nome": "tenis",
     "categoria": "60ad08e748e9e2048d20c1c2", 
     "quantidade": "5",
     "status": "disponivel",
@@ -29,15 +29,15 @@ Content-Type: application/json
         "originalname": "tenis",
         "path": "/public/upload/tenis.jpg",
         "size": "240",
-        "mimeType": "tenis/jpg",
+        "mimeType": "tenis/jpg"
     },
     "nota": "4",
-    "preco": "53",
+    "preco": "53"
 }
 
 ###
 //DELETE apaga um item
-DELETE {{baseURL}}/items/{{nome}}
+DELETE {{baseURL}}/items/{{id}}
 Content-Type: application/json
 
 ###
@@ -46,17 +46,17 @@ PUT {{baseURL}}/items
 Content-Type: application/json
 
 {
-    "_id":"",
-    "nome": "",
-    "catagoria": "", 
+    "_id":"60b11425685f71067cca25a8",
+    "nome": "salto",
+    "categoria": "60b11425685f71067cca25a8", 
     "quantidade": "",
-    "status": "",
+    "status": "disponivel",
     "foto": {
         "originalname": "",
         "path": "",
         "size": "",
-        "mimeType": "",
+        "mimeType": ""
     },
     "nota": "",
-    "preço": "",
+    "preço": ""
 }
