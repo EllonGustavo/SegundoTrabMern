@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
  router.get('/:nome', async (req, res) => {
     try {
         /**Não funciona */
-        const categorias = await Categoria.findOne(req.params.nome)
+        const categorias = await Categoria.find({nome: req.params.nome})
         res.json(categorias)
     } catch (err) {
         res.status(500).send({

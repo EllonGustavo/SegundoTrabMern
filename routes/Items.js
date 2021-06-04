@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 router.get('/:nome', async (req, res) => {
     /**Não funciona */
     try {
-        const item = await Item.find(req.params.nome)
+        const item = await Item.find({nome: req.params.nome})
         res.json(item)
     } catch (erro){
         res.status(500).send({
